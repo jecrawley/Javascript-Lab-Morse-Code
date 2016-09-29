@@ -1,4 +1,4 @@
-function translate3(){
+function alphaToMorse(){
 
     var morse = [".-", "-...", "-.-.", "-..", ".", "..-.", "--.", "....", "..",
                 ".---", "-.-", ".-..", "--", "-.", "---", ".--.", "--.-", ".-.",
@@ -15,13 +15,13 @@ function translate3(){
 
     function processInput(){
 
-        var input = prompt("Put in a word");
-        var length = input.length;
+        var input = document.getElementById("user-input");
+        var length = input.value.length;
         var output = "";
 
         for (var i = 0; i < length; i++) {
 
-            output += morse[alpha.indexOf(getLowerInputChar(input, i))];
+            output += morse[alpha.indexOf(getLowerInputChar(input.value, i))] + " ";
         }
 
         display.innerHTML = output;
